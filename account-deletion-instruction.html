@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Account & Data Deletion — YOUR_APP_NAME</title>
+  <style>
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:#f7fafc;color:#0f172a;margin:0;padding:24px}
+    .container{max-width:880px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{margin-top:0;font-size:28px}
+    p.lead{color:#334155}
+    section{margin-top:18px}
+    pre,code{background:#f1f5f9;padding:8px;border-radius:6px;overflow:auto}
+    ul{line-height:1.6}
+    .notice{background:#fff4e6;border-left:4px solid #ffd580;padding:12px;border-radius:6px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;background:#2563eb;color:#fff}
+    footer{margin-top:26px;color:#64748b;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Request Account & Data Deletion — YOUR_APP_NAME</h1>
+    <p class="lead">Use this page to request deletion of your account and any personal data associated with <strong>YOUR_APP_NAME</strong> (developer: <strong>YOUR_DEVELOPER_NAME</strong>).</p>
+
+    <section>
+      <h2>What this page is for</h2>
+      <p>This page describes how to request deletion of your account and what will happen after we receive your request. Please read the instructions carefully and provide the information requested so we can verify your request and remove your data.</p>
+    </section>
+
+    <section>
+      <h2>Data we collect (examples)</h2>
+      <p>The following are common personal data types we may have tied to your account via Google Sign-In / Firebase Authentication:</p>
+      <ul>
+        <li>Basic profile: full name, email address, profile photo</li>
+        <li>Account identifier: Firebase Auth UID (internal ID)</li>
+        <li>User-generated content stored in Firestore / Realtime Database</li>
+        <li>Files stored in Firebase Storage (uploads, attachments)</li>
+        <li>Device and app usage info (analytics, crash reports)</li>
+      </ul>
+      <p>If you want a complete list of data types for your particular account, include your Google email and Firebase UID in your deletion request (see the “How to request” section).</p>
+    </section>
+
+    <section>
+      <h2>What will be deleted</h2>
+      <ul>
+        <li>Your Firebase Authentication account record (name, email, profile picture) — once deleted you will no longer be able to sign in with that account.</li>
+        <li>User data stored in our databases (e.g., Firestore documents) that are directly linked to your account.</li>
+        <li>Files in Firebase Storage that were uploaded by you.</li>
+        <li>Push notification tokens associated with your account.</li>
+        <li>Any other personal data we maintain that can be tied to your account.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What may be retained and why</h2>
+      <ul>
+        <li>Aggregated or anonymized analytics data that cannot be tied back to an individual — used for improving the app.</li>
+        <li>Information we are required to keep for legal, tax, or accounting reasons (for example, transaction receipts) — only the minimum required and kept only as long as legally necessary.</li>
+        <li>Backups and logs: copies of some records may persist in backups for a short period; we will remove personal data from primary storage and schedules will remove it from backups according to our retention policy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to request account deletion</h2>
+      <p>Choose one of the methods below and include the required information so we can verify and process your request.</p>
+
+      <h3>Method A — Email request</h3>
+      <p>Send an email to: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
+      <p><strong>Required information (copy & paste into your email):</strong></p>
+      <pre>
+Subject: Delete my YOUR_APP_NAME account
+
+My full name:
+My Google account email (used to sign in):
+My Firebase UID (optional but helpful):
+Date you last signed into the app (approx):
+Any additional info to help locate my account:
+
+I confirm I want my account and associated personal data deleted. Please let me know if you require further verification.
+      </pre>
+
+      <h3>Method B — Web form</h3>
+      <p>If you prefer, submit this short request form instead:</p>
+      <form action="https://formspree.io/f/yourFormId" method="POST">
+        <label>Full name<br><input name="name" required style="width:100%;padding:8px;border-radius:6px;border:1px solid #e2e8f0"></label><br><br>
+        <label>Google account email (used to sign in)<br><input name="email" type="email" required style="width:100%;padding:8px;border-radius:6px;border:1px solid #e2e8f0"></label><br><br>
+        <label>Firebase UID (optional)<br><input name="uid" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e2e8f0"></label><br><br>
+        <label>Message (optional)<br><textarea name="message" rows="4" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e2e8f0"></textarea></label><br><br>
+        <button type="submit" class="btn">Submit deletion request</button>
+      </form>
+      <p class="notice">Note: Replace the form action URL with your Formspree / Netlify Forms / other form endpoint before publishing this page. GitHub Pages cannot process form submissions by itself.</p>
+    </section>
+
+    <section>
+      <h2>How we verify and process your request</h2>
+      <ul>
+        <li>We will verify that the request comes from the Google account owner — verification may include a reply from the same email address or asking for additional proof (screenshot showing you signed in).</li>
+        <li>After verification we will remove data tied to the account from our production databases and storage.</li>
+        <li>We will inform you by email when deletion is complete or if we need more information.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Suggested steps you should take</h2>
+      <ul>
+        <li>Revoke app access in your Google account: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> and remove <strong>YOUR_APP_NAME</strong>.</li>
+        <li>Sign out of the app on your devices and uninstall the app if you no longer wish to use it.</li>
+        <li>If you use the same Google account for other services, consider whether you want to keep or update those service settings separately.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Retention & timing</h2>
+      <p>When we complete deletion from primary systems we will also schedule removal from backups according to our retention policy. Certain records required for legal reasons may be retained for a limited period. If you require exact retention durations for specific data types, include your request in the message email and we will provide details for your account.</p>
+    </section>
+
+    <section>
+      <h2>Contact & support</h2>
+      <p>If you have any questions about the deletion process, data types, or need help locating your Firebase UID, contact us at: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
+      <p>You can also include screenshots or a short video showing where you see your account in the app to help us locate your records faster.</p>
+    </section>
+
+    <footer>
+      <p>Developer: <strong>YOUR_DEVELOPER_NAME</strong> — App: <strong>YOUR_APP_NAME</strong></p>
+      <p>Last updated: <!-- replace with date --> YYYY-MM-DD</p>
+    </footer>
+  </div>
+</body>
+</html>

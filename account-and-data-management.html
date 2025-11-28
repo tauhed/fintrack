@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Account & Data Management — FinTrack</title>
+  <style>
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:#f7fafc;color:#0f172a;margin:0;padding:24px}
+    .container{max-width:880px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{margin-top:0;font-size:28px}
+    p.lead{color:#334155}
+    section{margin-top:18px}
+    pre,code{background:#f1f5f9;padding:8px;border-radius:6px;overflow:auto;font-size:0.9rem}
+    ul{line-height:1.6}
+    .notice{background:#fff4e6;border-left:4px solid #ffd580;padding:12px;border-radius:6px}
+    .info{background:#e0f2fe;border-left:4px solid #0b63d4;padding:12px;border-radius:6px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;background:#0b63d4;color:#fff;font-weight:600}
+    .tabs{display:flex;gap:8px;margin-bottom:18px;border-bottom:2px solid #e2e8f0}
+    .tab-btn{padding:12px 16px;border:none;background:none;cursor:pointer;font-weight:600;color:#64748b;border-bottom:3px solid transparent}
+    .tab-btn.active{color:#0b63d4;border-bottom-color:#0b63d4}
+    .tab-content{display:none}
+    .tab-content.active{display:block}
+    footer{margin-top:26px;color:#64748b;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Account & Data Management — FinTrack</h1>
+    <p class="lead">Manage your FinTrack account, request data deletion, or delete your account entirely. Choose the option that best fits your needs.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('delete-account')">Delete Account</button>
+      <button class="tab-btn" onclick="switchTab('delete-data')">Delete Specific Data</button>
+    </div>
+
+    <!-- TAB 1: DELETE ACCOUNT -->
+    <div id="delete-account" class="tab-content active">
+      <section>
+        <h2>Request Full Account Deletion</h2>
+        <p>This option will permanently delete your entire FinTrack account and all associated personal data. You will no longer be able to sign in or recover any data.</p>
+      </section>
+
+      <section>
+        <h2>Data we collect</h2>
+        <p>When you use FinTrack with Google Sign-In, we store the following personal data tied to your account:</p>
+        <ul>
+          <li>Basic profile: full name, email address (from Google)</li>
+          <li>Account identifier: Firebase Authentication UID</li>
+          <li>User-generated financial data stored in Firestore: transactions, accounts, bills, categories, preferences</li>
+          <li>Crash reports and device info (Firebase Crashlytics)</li>
+        </ul>
+        <p>If you want a complete list of data stored for your account, include your Google email in your deletion request.</p>
+      </section>
+
+      <section>
+        <h2>What will be deleted</h2>
+        <ul>
+          <li>All personal financial data stored in Firestore under your user namespace: transactions, accounts, bills, categories, and preferences.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What may be retained</h2>
+        <ul>
+          <li>Aggregated or anonymized analytics data that cannot be tied back to you — used for improving the app's stability and performance.</li>
+          <li>Crash report logs: anonymized stack traces may persist for a short period to help identify and fix bugs.</li>
+          <li>Backups: copies of records may persist in backups for a short period; we will remove personal data from primary storage and backups will be purged according to our retention policy.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How to request account deletion</h2>
+        <p>Send an email with your account details to verify and process your request:</p>
+
+        <h3>Email request</h3>
+        <p>Send to: <a href="mailto:tauhedul.amin@gmail.com">tauhedul.amin@gmail.com</a></p>
+        <p><strong>Required information (copy &amp; paste into your email):</strong></p>
+        <pre>
+Subject: Delete my FinTrack account
+
+My full name:
+My Google account email (used to sign in):
+Date you last signed into the app (approx):
+Any additional info to help locate my account:
+
+I confirm I want my FinTrack account and associated personal data permanently deleted.
+        </pre>
+
+      </section>
+
+      <section>
+        <h2>Verification & processing</h2>
+        <ul>
+          <li>We will verify that the request comes from the Google account owner — verification may include a reply from the same email address or asking for additional proof (screenshot of your account in the app).</li>
+          <li>After verification we will remove data tied to your account from our Firestore database and cancel any active notifications.</li>
+          <li>We will inform you by email when deletion is complete or if we need more information.</li>
+          <li>Deletion typically occurs within 7 business days of verification.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Suggested steps after deletion</h2>
+        <ul>
+          <li>Revoke app access in your Google account: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> and remove <strong>FinTrack - Expense &amp; Bill Manager</strong>.</li>
+          <li>Sign out of the app on your devices and uninstall the app.</li>
+          <li>Delete any local data: uninstalling the app will remove locally-stored data from your device.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- TAB 2: DELETE SPECIFIC DATA -->
+    <div id="delete-data" class="tab-content">
+      <section>
+        <h2>Request Deletion of Specific Data (Keep Account)</h2>
+        <p>You can request deletion of specific categories of data without deleting your entire account. Your account and authentication will remain active.</p>
+      </section>
+
+      <section>
+        <h2>What data can be deleted</h2>
+        <p>You can request deletion of any of the following without affecting your account:</p>
+        <ul>
+          <li><strong>All transactions:</strong> Delete all income and expense entries while keeping accounts and categories.</li>
+          <li><strong>All bills:</strong> Delete all bill records and associated reminders.</li>
+          <li><strong>Specific transactions:</strong> Request deletion of transactions from a specific date range or category.</li>
+          <li><strong>All accounts:</strong> Delete all account records (this will also affect associated transactions).</li>
+        </ul>
+        <p>If you need to delete data not listed here, describe it in your request and we will review it.</p>
+      </section>
+
+      <section>
+        <h2>What remains</h2>
+        <ul>
+          <li>Your account and authentication credentials (you can still sign in).</li>
+          <li>Any data you did not request to be deleted.</li>
+          <li>Your basic profile information (name, email) — remains tied to your account.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How to request data deletion</h2>
+        <p>Send an email specifying which data categories you want deleted:</p>
+
+        <h3>Email request</h3>
+        <p>Send to: <a href="mailto:tauhedul.amin@gmail.com">tauhedul.amin@gmail.com</a></p>
+        <p><strong>Required information (copy &amp; paste into your email):</strong></p>
+        <pre>
+Subject: Delete specific data from my FinTrack account
+
+My full name:
+My Google account email (used to sign in):
+
+Data I want deleted (check all that apply):
+[ ] All transactions
+[ ] All bills
+[ ] Specific transactions (date range or details):
+[ ] All accounts
+[ ] Other (please describe):
+
+Additional notes:
+
+I understand that only the data I checked will be deleted. My account will remain active.
+        </pre>
+
+        <p class="notice">
+          <strong>Important:</strong> Be specific about which data you want deleted. For example, if you want to delete transactions from a specific date range, include the start and end dates.
+        </p>
+      </section>
+
+      <section>
+        <h2>Verification &amp; processing</h2>
+        <ul>
+          <li>We will verify that the request comes from the account owner — verification may include a reply from the same email address.</li>
+          <li>After verification we will delete only the data you requested from Firestore.</li>
+          <li>We will inform you by email when deletion is complete, with a summary of what was deleted.</li>
+          <li>Deletion typically occurs within 7 business days of verification.</li>
+          <li>You can continue using the app normally after deletion of specific data.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Can I undo this?</h2>
+        <p>No, data deletion is permanent. </p>
+      </section>
+
+    </div>
+
+    <!-- COMMON SECTION -->
+    <section style="margin-top:24px">
+      <h2>General information</h2>
+      <ul>
+        <li><strong>Timeline:</strong> Requests are typically processed within 7 business days of verification.</li>
+        <li><strong>Backups:</strong> Copies of records may persist in backups for a short period; we will remove data from primary storage and backups will be purged according to our retention policy.</li>
+        <li><strong>Questions:</strong> If you have any questions about the deletion process or need help locating your account, contact us at <a href="mailto:tauhedul.amin@gmail.com">tauhedul.amin@gmail.com</a>.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Developer: <strong>M. Tauhedul Amin</strong> — App: <strong>FinTrack - Expense &amp; Bill Manager</strong></p>
+      <p>Last updated: November 28, 2025</p>
+    </footer>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      // Hide all tabs
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      // Remove active class from all buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      // Show selected tab
+      document.getElementById(tabId).classList.add('active');
+      
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

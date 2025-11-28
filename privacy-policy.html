@@ -24,7 +24,7 @@
 
     <h2>Information We Collect</h2>
 
-    <h3>Account & Authentication</h3>
+    <h3>Account &amp; Authentication</h3>
     <p>If you sign in with Google, we collect basic account information provided by Google such as your name and email address to create and manage your account.</p>
 
     <h3>User-Provided Financial Data</h3>
@@ -36,30 +36,33 @@
     </ul>
     <p>The app does not access your bank accounts or cards. Only the information you enter is stored.</p>
 
-    <h3>Device & Usage Data</h3>
-    <p>With your consent, we may collect anonymous device identifiers and usage data (for example via Firebase Analytics and Crashlytics) to improve app stability and performance.</p>
+    <h3>Device &amp; Usage Data</h3>
+    <p>We use Google Firebase services to improve app reliability and performance. Firebase Crashlytics automatically collects crash reports to help us identify and fix bugs. This data includes stack traces and device information but no personal financial data.</p>
 
     <h3>Local Storage</h3>
-    <p>Local data is stored on the device (using SharedPreferences). Guest local data uses the key "guest"; signed-in user data is stored with a key that includes the user ID (for example keys like <code>transactions_&lt;userId&gt;</code> and <code>preferences_&lt;userId&gt;</code>).</p>
+    <p>Local data is stored on your device using local storage. Guest data uses the key "guest"; signed-in user data uses a key that includes your user ID (for example <code>transactions_&lt;userId&gt;</code> and <code>preferences_&lt;userId&gt;</code>).</p>
 
     <h2>How We Use Your Information</h2>
     <ul>
       <li>Account creation and authentication (Google Sign-In).</li>
-      <li>Syncing your data across devices using Firebase Firestore.</li>
-      <li>Scheduling and sending bill reminders (local notifications / Firebase Cloud Messaging where applicable).</li>
-      <li>Improving the app via analytics and crash reporting if you enable those features.</li>
+      <li>Syncing your financial data across devices using Firebase Firestore.</li>
+      <li>Scheduling and sending bill reminders (local notifications).</li>
+      <li>Improving app stability via crash reporting (Firebase Crashlytics).</li>
     </ul>
 
-    <h2>Data Storage & Security</h2>
-    <p>Cloud-synced data is stored in Google Firebase Firestore under your user space. Data is encrypted in transit (TLS). We use Firebase services (Firestore, Authentication, Cloud Messaging, Crashlytics, Analytics). We follow reasonable security practices but cannot guarantee absolute security.</p>
+    <h2>Data Storage &amp; Security</h2>
+    <p>Cloud-synced data is stored in Google Firebase Firestore under your user space. Data is encrypted in transit (TLS). We use Firebase services (Firestore, Authentication, Crashlytics). We follow reasonable security practices but cannot guarantee absolute security.</p>
 
     <h2>Third Parties</h2>
-    <p>We do not sell or rent personal data. We use third-party service providers to operate the app and infrastructure (for example Google Firebase). These providers process data only to the extent necessary to provide their services and are contractually required to protect data.</p>
+    <p>We do not sell or rent personal data. We use Google Firebase as a service provider to operate the app's backend and crash reporting. Firebase processes data only to the extent necessary to provide these services and is contractually required to protect data according to <a href="https://firebase.google.com/support/privacy">Google's Firebase Privacy</a>.</p>
 
     <h2>Notifications</h2>
-    <p>The app can schedule local bill reminder notifications. On Android the app may use platform alarm APIs; on some devices Firebase Cloud Messaging may be used for remote notifications. Notification scheduling uses IDs derived from bill identifiers — changing bill id format may affect notification cancellation/rescheduling.</p>
+    <p>The app schedules local bill reminder notifications on your device. No data is sent to external services for notifications.</p>
 
-    <h2>Data Retention & Deletion</h2>
+    <h2>Advertising</h2>
+    <p>The app does not currently display advertising.</p>
+
+    <h2>Data Retention &amp; Deletion</h2>
     <p>We retain account and user-entered data while your account exists. You can request deletion by:</p>
     <ul>
       <li>Using the in-app "Delete account" option if available, or</li>

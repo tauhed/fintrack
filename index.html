@@ -29,94 +29,49 @@
     <header>
       <div>
         <h1>FinTrack — Expense & Bill Manager</h1>
-        <div class="lead">Simple, private expense tracking with local storage, optional Firebase sync and reliable bill reminders.</div>
+        <div class="lead">Simple, expense tracking with local storage, optional Firebase sync and reliable bill reminders.</div>
       </div>
     </header>
 
     <div class="grid">
       <section>
         <div class="card">
-          <h2>What it does</h2>
+          <h2>Core features</h2>
           <ul class="features">
             <li>Track income, expenses, accounts and categories</li>
-            <li>Bill reminders using local notifications / platform alarm</li>
-            <li>Local-only guest mode and optional Google Sign-In + Firebase sync</li>
-            <li>Cross-device sync via Firestore (per-user namespace)</li>
-            <li>Small codebase using Provider architecture (AppState central orchestrator)</li>
-          </ul>
-
-          <div class="meta">
-            Main entry: <code>lib/main.dart</code> · State: <code>lib/providers/app_state.dart</code>
-          </div>
-
-          <div class="cta">
-            <a class="button" href="README.md">View README</a>
-            <a class="ghost" href="#quickstart">Quickstart</a>
-          </div>
+            <li>Bill reminders using local notifications / platform alarms</li>
+            <li>Guest local mode and optional Google Sign‑In + Firestore sync</li>
+            <li>Per-user namespace in Firestore: <code>users/&lt;uid&gt;/{transactions,accounts,bills,categories}</code></li>
+            <li>Provider-based state management with a single AppState orchestrator</li>
+          </ul>          
         </div>
 
         <div style="height:16px"></div>
 
         <div class="card">
-          <h2>Privacy</h2>
-          <p class="meta">The app uses Firebase Authentication (Google Sign-In) and Firestore for optional cloud sync. Crash reports are sent to Firebase Crashlytics. The app does not access bank accounts or cards — it stores only data you enter.</p>
-          <p class="meta">See the full privacy policy: <a href="privacy.html">privacy.html</a> (or <code>.github/privacy_policy.html</code>)</p>
+          <h2>Privacy & telemetry</h2>
+          <p class="meta">Optional Google Sign-In and Firestore sync. Crash reports are sent to Firebase Crashlytics. The app does not access bank accounts or cards — it stores only the data you enter.</p>
         </div>
       </section>
 
       <aside>
         <div class="card">
-          <h3>Get the app (build/run)</h3>
-          <p class="meta">Clone and run locally:</p>
-          <pre>
-git clone &lt;repo-url&gt;
-cd expense_tracker
-flutter pub get
-flutter run
-          </pre>
-          <p class="meta">Build APK:</p>
-          <pre>flutter build apk</pre>
+          <h3>Get the app</h3>
+          <p class="meta">Playstore Link:</p>          
         </div>
 
-        <div style="height:16px"></div>
+        <div style="height:16px"></div>        
 
         <div class="card">
-          <h3>Important files</h3>
-          <ul class="features">
-            <li><code>lib/providers/app_state.dart</code> — central sync & notification logic</li>
-            <li><code>lib/services/local_storage_service.dart</code> — SharedPreferences keys</li>
-            <li><code>lib/services/firestore_service.dart</code> — Firestore collections under <code>users/&lt;uid&gt;</code></li>
-            <li><code>lib/services/notification_service.dart</code> — platform alarm & notification channels</li>
-            <li><code>lib/screens/permission_setup_screen.dart</code> — permission flow for alarms/notifications</li>
-          </ul>
-        </div>
-
-        <div style="height:16px"></div>
-
-        <div class="card">
-          <h3>Contact & License</h3>
+          <h3>Contact</h3>
           <p class="meta">Developer: M. Tauhedul Amin<br>
           Email: <a href="mailto:tauhedul.amin@gmail.com">tauhedul.amin@gmail.com</a></p>
-          <p class="meta">See <code>LICENSE</code> for license details.</p>
         </div>
       </aside>
     </div>
 
-    <section style="margin-top:22px" id="quickstart">
-      <div class="card">
-        <h2>Quickstart for contributors</h2>
-        <ol>
-          <li>Install Flutter SDK & required platform tooling.</li>
-          <li>Run <code>flutter pub get</code>.</li>
-          <li>To test migrations and notifications run on an Android device/emulator (alarm APIs require device).</li>
-          <li>Firebase config: ensure <code>lib/firebase_options.dart</code> exists and platform service files are present (<code>android/app/google-services.json</code> / iOS plist) when using cloud features.</li>
-        </ol>
-        <p class="meta">Tests: <code>flutter test</code> (project has basic widget tests).</p>
-      </div>
-    </section>
-
     <footer>
-      © 2025 M. Tauhedul Amin — FinTrack · View source on GitHub
+      © 2025 M. Tauhedul Amin — FinTrack
     </footer>
   </main>
 </body>

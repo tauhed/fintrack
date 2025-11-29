@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Account & Data Management — FinTrack</title>
+  <title>Account & Data Management —  FinTrack - Expense & Bill Manager</title>
   <style>
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:#f7fafc;color:#0f172a;margin:0;padding:24px}
-    .container{max-width:880px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
-    h1{margin-top:0;font-size:28px}
+    body { font-family: system-ui, -apple-system, Roboto, "Helvetica Neue", Arial; line-height:1.6; color:#222; margin:0; padding:0; background:#f7f8fa; }
+    .container { max-width:900px; margin:36px auto; background:#fff; padding:28px; border-radius:10px; box-shadow:0 6px 30px rgba(20,20,40,0.06); }
+    h1,h2,h3 { color:#111; margin-top:18px; }
     p.lead{color:#334155}
     section{margin-top:18px}
     pre,code{background:#f1f5f9;padding:8px;border-radius:6px;overflow:auto;font-size:0.9rem}
@@ -20,12 +20,14 @@
     .tab-btn.active{color:#0b63d4;border-bottom-color:#0b63d4}
     .tab-content{display:none}
     .tab-content.active{display:block}
-    footer{margin-top:26px;color:#64748b;font-size:13px}
+	.small { font-size:0.9rem; color:#555; }
+    footer { text-align:center; color:#666; font-size:0.9rem; margin-top:24px; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Account & Data Management — FinTrack</h1>
+    <h1>Account & Data Management</h1>
+	<p class="small">Last updated: November 28, 2025</p>
     <p class="lead">Manage your FinTrack account, request data deletion, or delete your account entirely. Choose the option that best fits your needs.</p>
 
     <div class="tabs">
@@ -55,6 +57,7 @@
       <section>
         <h2>What will be deleted</h2>
         <ul>
+		  <li>Your Firebase Authentication account record (name, email)</li>
           <li>All personal financial data stored in Firestore under your user namespace: transactions, accounts, bills, categories, and preferences.</li>
         </ul>
       </section>
@@ -195,8 +198,7 @@ I understand that only the data I checked will be deleted. My account will remai
     </section>
 
     <footer>
-      <p>Developer: <strong>M. Tauhedul Amin</strong> — App: <strong>FinTrack - Expense &amp; Bill Manager</strong></p>
-      <p>Last updated: November 28, 2025</p>
+      &copy; 2025 M. Tauhedul Amin — FinTrack - Expense &amp; Bill Manager
     </footer>
   </div>
 
